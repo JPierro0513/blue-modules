@@ -7,7 +7,7 @@ Requires=nix.mount
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'curl --proto =https --tlsv1.2 -sSf -L https://install.lix.systems/lix | sh -s -- install ostree --no-confirm'
+ExecStart=/bin/bash -c "curl --proto '=https' --tlsv1.2 -sSf -L https://install.lix.systems/lix | sh -s -- install ostree --no-confirm"
 RemainAfterExit=yes
 
 [Install]

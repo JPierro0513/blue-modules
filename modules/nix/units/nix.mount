@@ -1,8 +1,7 @@
 [Unit]
 Description=Nix writable bind mount
 DefaultDependencies=no
-After=var.mount nix-seed.service
-Requires=nix-seed.service
+After=var.mount
 Before=nix-daemon.service nix-daemon.socket
 
 [Mount]
