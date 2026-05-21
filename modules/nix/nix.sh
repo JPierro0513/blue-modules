@@ -6,7 +6,7 @@ mkdir -p /usr/share/nix-store
 mkdir -p /nix
 
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.lix.systems/lix \
-  | sh -s -- install linux --no-start-daemon --no-confirm
+  | sh -s -- install ostree --persistence=/usr/share/nix-store --no-confirm
 
 # Move store to image-baked location
 mv /nix/* /usr/share/nix-store/
