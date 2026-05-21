@@ -1,0 +1,13 @@
+[Unit]
+Description=Seed Nix store to persistent /var/lib/nix on first boot
+DefaultDependencies=no
+Before=nix.mount
+ConditionPathExists=!/var/lib/nix/var/nix/db
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'mkdir -p /var/lib/nix && cp -a /usr/share/nix-store/. /var/lib/nix/'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=local-fs.target

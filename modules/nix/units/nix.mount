@@ -1,0 +1,14 @@
+[Unit]
+Description=Nix writable bind mount
+DefaultDependencies=no
+After=local-fs.target
+Before=nix-daemon.service nix-daemon.socket
+
+[Mount]
+What=/var/lib/nix
+Where=/nix
+Type=none
+Options=bind
+
+[Install]
+WantedBy=local-fs.target

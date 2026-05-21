@@ -1,0 +1,2 @@
+name: nix
+shortdesc: set mounts for nix dirs and run the lix installer
