@@ -1,6 +1,7 @@
 [Unit]
 Description=Seed Nix store to persistent /var/lib/nix on first boot
 DefaultDependencies=no
+After=var.mount
 Before=nix.mount
 ConditionPathExists=!/var/lib/nix/var/nix/db
 
